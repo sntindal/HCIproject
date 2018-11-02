@@ -43,18 +43,42 @@ body {
 		margin-top: 200px;
 		margin-right: 60px;
 		margin-left: 60px;
-		font-size: 45px;
+		font-size: 20px;
 		border: 1px solid gray;
 		color: #bfbfbf;
+		display: inline-block;
+}
+
+.searchbar p {
+    float: center;
+    padding: 6px;
+    border: none;
+    font-size: 20px;
+		font-family: "Futura", Verdana, serif;
+		color: gray;
+		display: inline;
+		background: white;
+		font-weight: bold;
+}
+
+.searchbar placeholder {
+    float: center;
+    padding: 6px;
+    border: none;
+    font-size: 20px;
+		font-family: "Futura", Verdana, serif;
+		color: #bfbfbf;
+		font-weight: lighter;
 }
 
 .searchbar input {
     float: center;
     padding: 6px;
     border: none;
-    font-size: 45px;
+    font-size: 20px;
 		font-family: "Futura", Verdana, serif;
 		color: #bfbfbf;
+		font-weight: lighter;
 }
 
 .searchbar button {
@@ -62,9 +86,10 @@ body {
   width: 160px;
 	height: 72px;
   padding: 6px;
+	margin-left: 100px;
   background: #bfbfbf;
   color: white;
-  font-size: 45px;
+  font-size: 20px;
 	font-family: "Futura", Verdana, serif;
   border-left: none; /* Prevent double borders */
   cursor: pointer;
