@@ -21,6 +21,13 @@ body {
 
 }
 
+.info {
+	text-align: center;
+	margin-top: 200px;
+	font-size: 30px;
+	font-family: "Futura", Verdana, serif;
+}
+
 .navigation {
     overflow: hidden;
     background-color: #ccdfde;
@@ -40,8 +47,8 @@ body {
 .searchbar {
 		float: center
 		padding: 6px;
-		margin-top: 200px;
-		margin-right: 60px;
+		margin-top: 0px;
+		margin-right: 100px;
 		margin-left: 60px;
 		font-size: 20px;
 		border: 1px solid gray;
@@ -52,10 +59,11 @@ body {
 .searchbar p {
     float: center;
     padding: 6px;
+		margin-left: 10px;
     border: none;
-    font-size: 20px;
+    font-size: 30px;
 		font-family: "Futura", Verdana, serif;
-		color: gray;
+		color: #4d4d4d;
 		display: inline;
 		background: white;
 		font-weight: bold;
@@ -64,20 +72,21 @@ body {
 .searchbar placeholder {
     float: center;
     padding: 6px;
-    border: none;
-    font-size: 20px;
-		font-family: "Futura", Verdana, serif;
-		color: purple;
-		font-weight: lighter;
+    border: 1px solid blue;
+		margin-right: 80px;
 }
+
 
 .searchbar input {
     float: center;
     padding: 6px;
     border: none;
+		width: 300px;
+		height: 50px;
     font-size: 20px;
+		margin-right: 50px;
 		font-family: "Futura", Verdana, serif;
-		color: gray;
+		color: black;
 		font-weight: lighter;
 }
 
@@ -86,9 +95,9 @@ body {
   width: 160px;
 	height: 72px;
   padding: 6px;
-	margin-left: 100px;
-  background: #bfbfbf;
-  color: white;
+	margin-left: 40px;
+  background: #ccdfde;
+  color: black;
   font-size: 20px;
 	font-family: "Futura", Verdana, serif;
   border-left: none; /* Prevent double borders */
