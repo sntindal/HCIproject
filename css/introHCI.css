@@ -13,6 +13,7 @@
    the CSS to the page. feel free to remove it once the link is working. */
 body {
      padding: 20px;
+		 font-family: "Futura", Verdana, serif;
 }
 
 .project {
@@ -39,43 +40,32 @@ body {
 .searchbar {
 		float: center
 		padding: 6px;
-		margin-top: 8px;
-		margin-right: 16px;
+		margin-top: 200px;
+		margin-right: 60px;
+		margin-left: 60px;
 		font-size: 45px;
 		border: 1px solid gray;
+		color: #bfbfbf;
 }
 
-.searchbar input[type=text] {
+.searchbar input {
     float: center;
     padding: 6px;
     border: none;
-    margin-top: 8px;
-    margin-right: 16px;
     font-size: 45px;
 		font-family: "Futura", Verdana, serif;
+		color: #bfbfbf;
 }
 
-.jumbotron {
-	position: relative;
-	background: none;
-}
-
-.jumbotron:after {
-     content:"";
-     background: url("../images/lorempixel.jumbotron.jpeg");
-     opacity: 0.2;
-     top: 0;
-     left: 0;
-     bottom: 0;
-     right: 0;
-     position: absolute;
-     z-index: -1;
-}
-
-.jumbotron p {
-     color: #6e6e6e;
-}
-
-.project a {
-     text-align: center;
+.searchbar button {
+  float: right;
+  width: 160px;
+	height: 72px;
+  padding: 6px;
+  background: #bfbfbf;
+  color: white;
+  font-size: 45px;
+	font-family: "Futura", Verdana, serif;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
 }
