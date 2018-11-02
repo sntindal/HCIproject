@@ -31,18 +31,77 @@ body {
 .navigation {
     overflow: hidden;
     background-color: #ccdfde;
+		display: inline-block;
+
 }
 
 .navigation a {
     float: left;
 		font-family: "Futura", Verdana, serif;
-    display: block;
+    display: inline-grid;
     color: black;
-    text-align: center;
-    padding: 14px 25px;
+    text-align: left;
+    padding: 35px 25px;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 20px;
+
 }
+
+.navigation .searchbar{
+	float: center;
+	padding: 6px;
+	border: none;
+	margin-top: 500px;
+	width: 500px;
+	height: 50px;
+	font-size: 20px;
+	font-family: "Futura", Verdana, serif;
+	color: black;
+	font-weight: lighter;
+	background: white;
+	display: inline;
+}
+
+.navigation .searchbar p {
+    float: center;
+    padding: 6px;
+    border: none;
+		width: 300px;
+		height: 50px;
+    font-size: 15px;
+		margin-right: 50px;
+		font-family: "Futura", Verdana, serif;
+		color: black;
+		font-weight: lighter;
+}
+
+.navigation .searchbar input {
+    float: center;
+    padding: 6px;
+    border: none;
+		width: 100px;
+		height: 30px;
+    font-size: 15px;
+		margin-right: 50px;
+		font-family: "Futura", Verdana, serif;
+		color: black;
+		font-weight: lighter;
+}
+
+.navigation .searchbar button {
+  float: right;
+  width: 100px;
+	height: 30px;
+  padding: 6px;
+	margin-left: 100px;
+  background: #ccdfde;
+  color: black;
+  font-size: 20px;
+	font-family: "Futura", Verdana, serif;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
 
 .searchbar {
 		float: center
@@ -53,6 +112,7 @@ body {
 		font-size: 20px;
 		border: 1px solid gray;
 		color: #bfbfbf;
+		background: white;
 		display: inline-block;
 }
 
