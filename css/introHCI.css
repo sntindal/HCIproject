@@ -16,6 +16,11 @@ body {
 		 font-family: "Futura", Verdana, serif;
 }
 
+h1 {
+	color: white;
+	font-size: 50px;
+}
+
 .project {
 	font-size: 45px;
 
@@ -25,6 +30,7 @@ body {
 	text-align: center;
 	margin-top: 200px;
 	font-size: 30px;
+	color: white;
 	font-family: "Futura", Verdana, serif;
 }
 
