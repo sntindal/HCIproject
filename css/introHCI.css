@@ -1,19 +1,12 @@
-/* applies to anything of class "example-class-selector" */
-.example-class-selector {
-	margin-top: 2em;
-}
-
-/* applies to any <p> descendants of an element of class "example-class-selector" */
-.example-class-selector p {
-	/* Colors are in hexadecimal: http://www.colorpicker.com/ */
-	color: #CC00AA;
-}
 
 /* this style exists to make it obvious that you've successfully linked
    the CSS to the page. feel free to remove it once the link is working. */
 body {
-     padding: 20px;
+     /*padding: 20px;*/
+		 margin: 0;
+		 padding: 0;
 		 font-family: "Futura", Verdana, serif;
+		 font-size: 15px;
 }
 
 h2 {
@@ -41,31 +34,63 @@ h1 {
 	font-family: "Futura", Verdana, serif;
 }
 
-.navigation {
-    overflow: hidden;
+.nav {
+    /*overflow: hidden;
     background-color: #ccdfde;
 		display: inline-block;
 		position: fixed;
-		top: 20px;
-		width: 1200px;
+		top: 20px;*/
+		top: 0;
+		width: 100%;
+		height: 90px;
+		background-color: #ccdfde;
+		display: block;
+		position: fixed:absolute;
 }
 
-.navigation a {
+.navigation{
+	display: inline;
+	text-align: center;
+}
+
+.navigation .left {
     float: left;
 		font-family: "Futura", Verdana, serif;
-    display: inline-grid;
+		font-size: 15px;
+		color: black;
+		padding: 35px 25px;
+		text-decoration: none;
+    /*display: inline-grid;
     color: black;
     text-align: left;
     padding: 35px 25px;
 		margin-left: 35px;
     text-decoration: none;
-    font-size: 20px;
-
+    font-size: 20px;*/
 }
 
-.navigation .searchbar{
+.navigation .right {
+    float: right;
+		font-family: "Futura", Verdana, serif;
+		font-size: 15px;
+		color: black;
+		padding: 35px 25px;
+		text-decoration: none;
+	}
+
+.navigation a:hover{
+	background-color: white;
+}
+
+#searchNav{
 	float: left;
-	padding: 6px;
+	display: inline;
+	margin-left: 250px;
+	background-color: white;
+	margin-top: 20px;
+	height: 50px;
+	padding-left: 10px;
+	/*padding: 6px;
 	border: none;
 	margin-top: 20px;
 	width: 650px;
@@ -75,25 +100,37 @@ h1 {
 	color: black;
 	font-weight: lighter;
 	background: white;
-	display: inline;
+	display: inline;*/
+	/*margin-right: auto;
+	margin-left: auto;*/
 }
 
-.navigation .searchbar p {
-    float: center;
-    padding: 6px;
+.navigation input[type=text] {
+    padding: 12px;
+		margin-top: 0px;
     border: none;
-		width: 300px;
-		height: 50px;
-    font-size: 15px;
-		margin-right: 15px;
 		font-family: "Futura", Verdana, serif;
+		font-size: 15px;
+		width: 225px;
+		height: 25px;
 		color: black;
-		font-weight: lighter;
+		/*margin-right: 15px;
+		color: black;
+		font-weight: lighter;*/
 }
 
-.navigation .searchbar input {
+.navigation button {
     float: center;
-    padding: 6px;
+		padding: 6px;
+		margin-top: 0px;
+		border: none;
+		font-family: "Futura", Verdana, serif;
+		font-size: 15px;
+		cursor: pointer;
+		width: 100px;
+		height: 50px;
+		background-color: #6ca2a0;
+    /*padding: 6px;
     border: none;
 		width: 200px;
 		height: 30px;
@@ -101,7 +138,7 @@ h1 {
 		margin-right: 20px;
 		font-family: "Futura", Verdana, serif;
 		color: black;
-		font-weight: lighter;
+		font-weight: lighter;*/
 }
 
 .navigation .searchbar button {
@@ -109,13 +146,14 @@ h1 {
   width: 100px;
 	height: 30px;
   padding: 6px;
-	margin-left: 500px;
+	margin-left: 600px;
   background: #ccdfde;
   color: black;
   font-size: 20px;
 	font-family: "Futura", Verdana, serif;
   border-left: none; /* Prevent double borders */
   cursor: pointer;
+	display: block;
 }
 
 
