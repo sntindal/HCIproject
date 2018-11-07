@@ -15,14 +15,22 @@
 		<div class="navigation">
 			<a class=left href="index.html">Home</a>
 			<container id="searchNav">
-					Find <input type="text" placeholder="Ingredients, recipes, tools...">
-					Near <input type="text" placeholder="Current location">
-					<a href="mapsPage.html"><button>Search</button></a>
+					Find <input id="query" type="text" placeholder="Ingredients, recipes, tools...">
+					Near <input id="address" type="text" placeholder="Current location">
+					<a id="submit" href="mapsPage.html"><button>Search</button></a>
 			</container>
 			<a class=right href="profile.html">Profile</a>
 			<a class=right href="forum.html">Forum</a>
 		</div>
 	</div>
+
+	<script>
+	var searchInput = {
+		'key1' : 'query',
+		'key2' : 'address'
+	};
+	localStorage.setItem( 'objectToPass', searchInput );
+	</script>
 
 		<div class="info">
 			<p>Missing an ingredient, recipe, or tool? Look no further!</p>
@@ -36,9 +44,13 @@
 			<a href="mapsPage.html"><button>Search</button></a>
 		</div>
 
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="js/bootstrap.min.js"></script>
 
 	</div>
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/handlebars-v4.0.11.js"></script>
+	<script src="js/introHCI.js"></script>
+
 </body>
 </html>
