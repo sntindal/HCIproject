@@ -177,3 +177,23 @@ h1 {
   border-left: none; /* Prevent double borders */
   cursor: pointer;
 }
+
+.comment {
+  width: 600px;
+  padding: 15px;
+  border: 2px solid black;
+	margin: 25px;
+}
+
+.leftCol {
+	float: left;
+	width: 60%;
+	padding: 20px;
+}
+
+.rightCol {
+	float: right;
+	padding: 10px;
+	width: 30%;
+}
+
