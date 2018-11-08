@@ -201,3 +201,52 @@ h1 {
 	width: 30%;
 }
 
+.container {
+	width: 100%;
+	padding: 75px;
+}
+.first {
+	width: 45%;
+	float: left;
+	height: 100%;
+	background-color: clear;
+}
+.second {
+	width: 45%;
+	float: left;
+	height: 100%;
+	background-color: clear;
+	border-left: 3px solid white;
+	padding-left: 20px;
+}
+
+.login input {
+	float: center;
+	padding: 10px;
+	border: none;
+	width: 200px;
+	height: 20px;
+	font-size: 15px;
+	font-family: "Futura", Verdana, serif;
+	color: black;
+	font-weight: lighter;
+}
+
+.login button {
+float: center;
+width: 200px;
+height: 20px;
+padding: 10px;
+margin-left: 40px;
+background: #ccdfde;
+color: black;
+font-size: 15px;
+font-family: "Futura", Verdana, serif;
+border-left: none; /* Prevent double borders */
+cursor: pointer;
+}
+
+#logintext {
+color: white;
+}
+
