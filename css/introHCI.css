@@ -192,13 +192,13 @@ h1 {
 .leftCol {
 	float: left;
 	width: 60%;
-	padding: 20px;
+	padding: 10px;
 }
 
 .rightCol {
 	float: right;
-	padding: 10px;
-	width: 30%;
+	padding: 5px;
+	width: 35%;
 }
 
 .container {
@@ -248,5 +248,9 @@ cursor: pointer;
 
 #logintext {
 color: white;
+}
+
+.container2 {
+	width: 100%;
 }
 
