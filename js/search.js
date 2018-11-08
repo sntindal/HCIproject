@@ -1,8 +1,8 @@
 function processSearch(){
-    //var input = document.myform.input.value;
+    var input = document.myform.query.value;
     var address = document.myform.address.value;
 
-    //localStorage.setItem("input", input);
+    localStorage.setItem("input", input);
     localStorage.setItem("address", address);
     alert("Saved: " + localStorage.getItem("input") + ", and " + localStorage.getItem("address"));
 }
@@ -12,12 +12,12 @@ function clearSearch(){
 }
 
 function retrieveSearchInfo(){
-    //var input = localStorage.getItem("input");
-  //  $("#query").html("Input: " + input);
-
+    var input = localStorage.getItem("input");
+    $("#query").html("Input: " + input);
 
     var address = localStorage.getItem("address");
     $("#address").html("Address: " + address);
+    return address;
 }
 
 function geocodeAddress(geocoder, resultsMap) {
