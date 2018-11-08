@@ -199,6 +199,7 @@ h1 {
 	float: right;
 	padding: 5px;
 	width: 35%;
+	padding: 10px;
 }
 
 .container {
@@ -252,5 +253,48 @@ color: white;
 
 .container2 {
 	width: 100%;
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-bottom: 30px;
 }
+
+#profilePic {
+	float: left;
+}
+
+#myText {
+	font-size: 15px;
+	color:black;
+	font-family: "Futura", Verdana, serif;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.loginButton {
+	background-color: clear; /* Green */
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+.loginButton {
+	background-color: white; 
+	color: black; 
+	border: 2px solid white;
+}
+
+.loginButton:hover {
+	background-color: white;
+	color: white;
+}
+
+
 
