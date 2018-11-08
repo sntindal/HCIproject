@@ -1,0 +1,155 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Forum Answer 2</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/introHCI.css" rel="stylesheet" />
+</head>
+
+<header>
+    <div class="nav">
+		<div class="navigation">
+			<a class=left href="index.html">Home</a>
+			<container id="searchNav">
+					Find <input type="text" placeholder="Ingredients, recipes, tools...">
+					Near <input type="text" placeholder="Current location">
+					<a href="mapsPage.html"><button>Search</button></a>
+			</container>
+			<a class=right href="profile.html">Profile</a>
+			<a class=right href="forum.html">Forum</a>
+		</div>
+	</div>
+</header>
+
+<body>
+    <div class="searchbar" style="margin-top: 30px; margin-bottom: 30px">
+            <p>
+                Have another question?
+            </p>
+			<input type="text" placeholder="Type your question here...">
+			<button type="submit"><i class="fa fa-search">Search</i></button>
+        </div>
+
+        <h3 style="margin-left: 35px">
+                "What are some good egg free recipes?"
+            </h3>
+
+    <div class="container2">
+        <div class="leftCol">
+            <div>
+                <h4>
+                    Results for your question:
+                </h4>
+            </div>
+            <div class="comment">
+                <img src="profilePicIcon.png" height="40px" width="40px" id="profilePic">
+                    <h3>Keira T.</h3>
+                <p style="padding: 0px">Here's the link to one of my favorite recipes: 
+                    <a href="https://www.keepinglifesane.com/best-eggless-chocolate-chip-cookies/">https://www.keepinglifesane.com/best-eggless-chocolate-chip-cookies/</a>. I make 
+                these all the time. It's super simple and the kids love it!</p>
+
+                <h4 style="padding: 0px; margin-left: 15px">Aiden L.</h4>
+                <p style="padding: 0px; margin-left: 15px">Thanks Keira, I tried this the other day 
+                and it was a hit for the family!</p>
+                    
+                    <p id="demo"></p>
+                    <script>
+                            function myFunction() {
+                                var x = document.getElementById("myText").value;
+                                document.getElementById("demo").innerHTML = x;
+                            }
+                            </script>
+                
+                <input type="text" id="myText" placeholder="Type your comment here...">
+                
+                
+                <button onclick="myFunction()">Comment</button>
+            </div>
+            
+            <div class="comment">
+                <img src="profilePicIcon.png" height="40px" width="40px" id="profilePic">
+                    <h3>Jaylin O.</h3>
+                <p style="padding: 0px">Try this one: <a href="https://www.yummly.com/recipe/No-bake-peanut-butter-cookies-333689.">https://www.yummly.com/recipe/No-bake-peanut-butter-cookies-333689</a>.
+                They don't have eggs or butter!</p>
+
+                <h4 style="padding: 0px; margin-left: 15px">Bryan P.</h4>
+                <p style="padding: 0px; margin-left: 15px">Whoa, I usually don't see recipes without both 
+                eggs and butter. Are the textures of the cookies still similar to regular ones?</p>
+
+                <h4 style="padding: 0px; margin-left: 15px">Jaylin O.</h4>
+                <p style="padding: 0px; margin-left: 15px">Yes, they are. You won't even notice the difference.</p>
+
+                <h4 style="padding: 0px; margin-left: 15px">April K.</h4>
+                <p style="padding: 0px; margin-left: 15px">Can confirm, these are amazing!</p>
+                    
+                    <p id="demo"></p>
+                    <script>
+                            function myFunction() {
+                                var x = document.getElementById("myText").value;
+                                document.getElementById("demo").innerHTML = x;
+                            }
+                            </script>
+                
+                <input type="text" id="myText" placeholder="Type your comment here...">
+                
+                
+                <button onclick="myFunction()">Comment</button>
+            </div>
+
+            <div class="comment">
+                <img src="profilePicIcon.png" height="40px" width="40px" id="profilePic">
+                    <h3>Ellis G.</h3>
+                <p style="padding: 0px">Here's my fave: <a href="https://www.spiceupthecurry.com/eggless-chocolate-chip-cookies/">https://www.spiceupthecurry.com/eggless-chocolate-chip-cookies/</a></p>
+                    
+                    <p id="demo"></p>
+                    <script>
+                            function myFunction() {
+                                var x = document.getElementById("myText").value;
+                                document.getElementById("demo").innerHTML = x;
+                            }
+                            </script>
+                
+                <input type="text" id="myText" placeholder="Type your comment here...">
+                
+                
+                <button onclick="myFunction()">Comment</button>
+            </div>
+
+            <div class="comment">
+                <img src="profilePicIcon.png" height="40px" width="40px" id="profilePic">
+                    <h3>Alex K.</h3>
+                <p style="padding: 0px">Here's a sugar cookie recipe if you aren't feeling the other flavors. <a href="https://www.cooks.com/recipe/ku8q25r1/favorite-sugar-cookies-no-eggs.html">https://www.cooks.com/recipe/ku8q25r1/favorite-sugar-cookies-no-eggs.html</a>
+                I personally love the simplicity of these cookies.</p>
+
+                <p id="demo"></p>
+                <script>
+                        function myFunction() {
+                            var x = document.getElementById("myText").value;
+                            document.getElementById("demo").innerHTML = x;
+                        }
+                        </script>
+            
+            <input type="text" id="myText" placeholder="Type your comment here...">
+            
+            
+            <button onclick="myFunction()">Comment</button>
+            </div>
+        </div>
+
+        <div class="rightCol">
+            <h4>Frequently asked questions</h4>
+            </h3>
+            <p><a href="forumSearchResults.html">How to make egg whites fluffy without a hand-mixer?</a>
+            <br>Question...<br>Question...</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/handlebars-v4.0.11.js"></script>
+    <script src="js/search.js"></script>  
+    
+</body>
+</html>
