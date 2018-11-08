@@ -15,9 +15,10 @@
 		<div class="navigation">
 			<a class=left href="index.html">Home</a>
 			<container id="searchNav">
+				<form name="myform" id="myform" action="" method="get">
 					Find <input type="text" placeholder="Ingredients, recipes, tools...">
 					Near <input id="address" type="text" placeholder="Current location">
-					<input id="submit" type="button" value="Search">
+					<input id="submit" type="button" value="Search" onclick="processSearch();">
 			</container>
 			<a class=right href="profile.html">Profile</a>
 			<a class=right href="forum.html">Forum</a>
@@ -28,13 +29,13 @@
 		<h1>
 			Search Results for XXX
 		</h1>
-<script>
+<!--<script>
 		var myData = localStorage['objectToPass'];
 		localStorage.removeItem( 'objectToPass' ); // Clear the localStorage
 		var query = myData[0];
 		var address = myData[1];
 		//alert('firstData: ' + firstData + '\nsecondData: ' + secondData);
-	</script>
+	</script>-->
 
 		<!--https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple-->
 		<div id="map" style="width:400px;height:400px;"></div>
@@ -45,13 +46,15 @@
           center: {lat: -34.397, lng: 150.644}
         });
         var geocoder = new google.maps.Geocoder();
+				var address = document.getElementById('address').value;
+				localStorage.setItem( 'address', address);
 
         document.getElementById('submit').addEventListener('click', function() {
           geocodeAddress(geocoder, map);
         });
       }
 
-      function geocodeAddress(geocoder, resultsMap) {
+      /*function geocodeAddress(geocoder, resultsMap) {
 				//var address = localStorage.getItem('customAddress');
         var address = document.getElementById('address').value;
 				//localStorage.setItem('customAddress', address);
@@ -66,7 +69,7 @@
             alert('Geocode was not successful for the following reason: ' + status);
           }
         });
-      }
+      }*/
 	  	</script>
 
 		<p>
@@ -105,7 +108,7 @@
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/handlebars-v4.0.11.js"></script>
-		<script src="js/introHCI.js"></script>
+		<script src="js/search.js"></script>
 
 </body>
 </html>
