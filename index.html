@@ -5,7 +5,7 @@
 	<title>Homepage</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="css/introHCI.css" rel="stylesheet" />
+	<link href="introHCI.css" rel="stylesheet" />
 
 </head>
 
@@ -20,8 +20,8 @@
 					Near <input id="address" type="text" placeholder="Current location">
 					<!--<a href="mapsPage.html"><button>Search</button></a>
 					<input id="submit" type="button" value="Search" onclick="processSearch();" href="mapsPage.html">-->
+					<a href="mapsPage.html" data-role="button" id="submit" onclick="processSearch();" value="Search">Search</a>
 			</container>
-			<a href="mapsPage.html" data-role="button" id="submit" onclick="processSearch();" value="Search">Search</a>
 			<a class=right href="profileLogin.html">Profile</a>
 			<a class=right href="forum.html">Forum</a>
 		</div>
@@ -40,11 +40,12 @@
 		</div>
 
 		<div class="searchbar">
+			<form name="myform" id="myform" action="" method="get">
 			<p>Find</p>
-			<input type="text" placeholder="Ingredients, recipes, tools..."></input>
+			<input id="query" type="text" placeholder="Ingredients, recipes, tools..."></input>
 			<p>Near</p>
-			<input type="text" placeholder="Current location"></input>
-			<a href="mapsPage.html"><button>Search</button></a>
+			<input id="address" type="text" placeholder="Current location"></input>
+			<a href="mapsPage.html" data-role="button" id="submit" onclick="processSearch();" value="Search">Search</a>
 		</div>
 
 
