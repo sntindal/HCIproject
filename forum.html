@@ -8,6 +8,21 @@
 	<link href="css/introHCI.css" rel="stylesheet" />
 </head>
 
+<header>
+		<div class="nav">
+				<div class="navigation">
+					<a class=left href="index.html">Home</a>
+					<container id="searchNav">
+							Find <input type="text" placeholder="Ingredients, recipes, tools...">
+							Near <input type="text" placeholder="Current location">
+							<a href="mapsPage.html"><button>Search</button></a>
+					</container>
+					<a class=right href="profile.html">Profile</a>
+					<a class=right href="forum.html">Forum</a>
+				</div>
+			</div>
+</header>
+
 <body>
 	<img src="churros.jpg" style='position:fixed;
 	top:0px;
@@ -17,25 +32,22 @@
 	z-index:-1;'>
 
 	<div>
-
-		<div class="nav">
-			<div class="navigation">
-				<a class=left href="index.html">Home</a>
-				<container id="searchNav">
-						Find <input type="text" placeholder="Ingredients, recipes, tools...">
-						Near <input type="text" placeholder="Current location">
-						<a href="mapsPage.html"><button>Search</button></a>
-				</container>
-				<a class=right href="profile.html">Profile</a>
-				<a class=right href="forum.html">Forum</a>
-			</div>
-		</div>
-
 		<h2>Forum</h2>
 
 		<div class="searchbar">
-			<input type="text" placeholder="Ask a question..."></input>
-			<a href="forumSearchResults.html"><button>Search</button></a>
+			<input type="search" id="mySearch" placeholder="Ask a question..."></input>
+			<!-- <p id="demo"></p>
+	<button onclick="myFunction()">Search</button>
+	<script>
+	function search()
+	{
+	var searchInput = document.getElementById('search').text();
+	var url = "forum" + searchInput + "2";
+	window.open(https://janethe7.github.io/HCIproject/forumAnswers1.html);
+	}
+	</script> -->
+
+			<a href="forumAnswers1.html"><button>Search</button></a>
 		</div>
 
 	</div>

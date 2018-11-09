@@ -16,7 +16,7 @@
 			<a class=left href="index.html">Home</a>
 			<container id="searchNav">
 				<form name="myform" id="myform" action="" method="get">
-					Find <input type="text" placeholder="Ingredients, recipes, tools...">
+					Find <input id="query" type="text" placeholder="Ingredients, recipes, tools...">
 					Near <input id="address" type="text" placeholder="Current location">
 					<input id="submit" type="button" value="Search" onclick="processSearch();">
 			</container>
@@ -26,9 +26,6 @@
 	</div>
 
 	<div>
-		<h1>
-			Search Results for XXX
-		</h1>
 <!--<script>
 		var myData = localStorage['objectToPass'];
 		localStorage.removeItem( 'objectToPass' ); // Clear the localStorage
@@ -40,13 +37,50 @@
 		<!--https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple-->
 		<div id="map" style="width:400px;height:400px;"></div>
 	    <script>
+			var input = localStorage.getItem("query");
+			var address = localStorage.getItem("address");
+				//var address = retrieveSearchInfo();
+				alert(address);
+				/*geocoder.geocode( { 'address': address}, function(results, status) {
+
+					if (status == google.maps.GeocoderStatus.OK) {
+	    			var latitude = results[0].geometry.location.lat();
+	    			var longitude = results[0].geometry.location.lng();
+	    			alert(latitude);
+	    		}
+				});*/
 			function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
-          center: {lat: -34.397, lng: 150.644}
-        });
-        var geocoder = new google.maps.Geocoder();
-				var address = document.getElementById('address').value;
+				var latitude;
+				var longitude;
+				var geocoder = new google.maps.Geocoder();
+				//var address = localStorage.getItem('address');
+				geocoder.geocode( { 'address': address}, function(results, status) {
+
+					if (status == google.maps.GeocoderStatus.OK) {
+						latitude = results[0].geometry.location.lat();
+						localStorage.setItem( 'latitude', latitude);
+						longitude = results[0].geometry.location.lng();
+						localStorage.setItem( 'longitude', longitude);
+						alert(latitude);
+					}
+				});
+				latitude = localStorage.getItem("latitude").value;
+				longitude = localStorage.getItem("longitude").value;
+				alert(latitude);
+
+				var map = new google.maps.Map(document.getElementById('map'), {
+	          zoom: 8,
+	          center: {lat: -34.397, lng: 150.644}
+	        });
+				//alert(center);
+				/*var latlng = new google.maps.LatLng(latitude, longitude);
+    		var mapOptions = {
+      		zoom: 8,
+      		center: latlng
+    		}
+				map = new google.maps.Map(document.getElementById('map'), mapOtions);*/
+        //var geocoder = new google.maps.Geocoder();
+				address = document.getElementById('address').value;
 				localStorage.setItem( 'address', address);
 
         document.getElementById('submit').addEventListener('click', function() {
@@ -71,6 +105,8 @@
         });
       }*/
 	  	</script>
+
+			<h1> Search Results for "input"</h1>
 
 		<p>
 			Here are some neigbors who have what you're looking for!
@@ -111,6 +147,12 @@
 			<img id = "messageIcon" src = "messengerIcon.png" style = "cursor:pointer">
 		</a>
 	</div>
+	<div class="card">
+			<h4><b>Map of neighbors with item in your area!</b></h4>
+			<img src="" alt="Map" style="width:100%">
+			<div class="container">
+			</div>
+  </div>
 
 		<script async defer
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrsYMYyM3U9VvOXL06tT0VDgV1SJGtGp4&callback=initMap">

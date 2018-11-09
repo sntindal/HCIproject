@@ -8,31 +8,35 @@
 	<link href="css/introHCI.css" rel="stylesheet" />
 </head>
 
+<header>
+    	<div class="nav">
+                <div class="navigation">
+                    <a class=left href="index.html">Home</a>
+                    <container id="searchNav">
+                            Find <input type="text" placeholder="Ingredients, recipes, tools...">
+                            Near <input type="text" placeholder="Current location">
+                            <a href="mapsPage.html"><button>Search</button></a>
+                    </container>
+                    <a class=right href="profile.html">Profile</a>
+                    <a class=right href="forum.html">Forum</a>
+                </div>
+            </div>
+
+            <div class="searchbar" style="margin-top: 30px; margin-bottom: 30px">
+                    <p>
+                        Have another question?
+                    </p>
+                    <input type="text" placeholder="Type your question here...">
+                    <button type="submit"><i class="fa fa-search">Search</i></button>
+                </div>
+
+</header>
+
 <body>
-
-	<div class="nav">
-		<div class="navigation">
-			<a class=left href="index.html">Home</a>
-			<container id="searchNav">
-					Find <input type="text" placeholder="Ingredients, recipes, tools...">
-					Near <input type="text" placeholder="Current location">
-					<a href="mapsPage.html"><button>Search</button></a>
-			</container>
-			<a class=right href="profile.html">Profile</a>
-			<a class=right href="forum.html">Forum</a>
-		</div>
-	</div>
-
-    <div class="searchbar">
-            <p>
-                Have another question?
-            </p>
-			<input type="text" placeholder="Type your question here...">
-			<button type="submit"><i class="fa fa-search">Search</i></button>
-    </div>
-    <h1>
+<div style="padding: 30px">
+    <h3>
         "An alternative way to make egg white fluffy is by using a fork"
-    </h1>
+    </h3>
     <div>
         <h4>
             Comments:
@@ -52,8 +56,27 @@
         <p>
             3. Oh, I make them fluffy by...
         </p>
-    <div class="searchbar">
-        <input type="text" placeholder="Write your own comment">
-    </div>
-    </div>
+
+
+    <p id="demo"></p>
+    <script>
+            function myFunction() {
+                var x = document.getElementById("myText").value;
+                document.getElementById("demo").innerHTML = x;
+            }
+            </script>
+
+<input type="text" id="myText" placeholder="Type your comment here...">
+
+
+<button onclick="myFunction()">Comment</button>
+
+</div>
+
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/handlebars-v4.0.11.js"></script>
+	<script src="js/search.js"></script>    
+
 </body>
