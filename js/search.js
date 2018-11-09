@@ -38,6 +38,12 @@ function geocodeAddress(geocoder, resultsMap) {
 		});
 	}
 
+  function myFunction() {
+      var x = document.getElementById("myText").value;
+      document.getElementById("demo").innerHTML = x;
+  }
+
+
 /*function onSuccessPopDatabase(position){
     localStorage.setItem("carLoc", new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
      if (markersArray) {
