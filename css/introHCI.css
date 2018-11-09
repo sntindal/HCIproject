@@ -1,6 +1,7 @@
 
 /* this style exists to make it obvious that you've successfully linked
    the CSS to the page. feel free to remove it once the link is working. */
+
 body {
      /*padding: 20px;*/
 		 margin: 0;
@@ -254,3 +255,133 @@ color: white;
 	width: 100%;
 }
 
+.topProfile row1{
+  float: left;
+  padding: 10px;
+}
+
+#pic {
+	width: 15%;
+}
+
+#contact {
+	width: 75%;
+}
+
+#contact h1{
+	font-size: 32px;
+	margin-bottom: 2px;
+}
+
+#contact p {
+	font-size: 16px;
+}
+
+.column2 {
+		background: lightblue;
+		margin-top: 7px;
+		margin-left: 7px;
+		border-radius: 10px;
+		border: 2px solid white;
+    float: left;
+    width: 31%;
+    padding: 10px;
+    height: 300px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.topProfile{
+	background: lightblue;
+	border: 3px solid white;
+	border-radius: 10px;
+	margin-top: 7px;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+.img-thumbnail{
+	max-width: 250px;
+	max-height: 250px;
+	align: left;
+	padding: 30px;
+}
+
+#messageIcon{
+	padding-top: 10px;
+	max-width: 50px;
+	max-height: 50px;
+	align: left;
+}
+
+.column2 p{
+	font-size: 12;
+	padding: 0;
+}
+
+.titleProf{
+	text-align: center;
+	border-bottom: 3px solid gray;
+}
+
+#addNew {
+     margin-top :20px;
+}
+
+@media only screen and (max-width : 540px){
+	.chat-popup{
+  	display: none !important;
+	}
+}
+
+body
+{
+  background-color: #e9eaed;
+}
+
+
+.popup-box
+{
+  display: none;
+  position: fixed;
+  bottom: 0px;
+  right: 220px;
+  height: 285px;
+  background-color: rgb(237, 239, 244);
+  width: 300px;
+  border: 1px solid rgba(29, 49, 91, .3);
+}
+
+.popup-box .popup-head
+{
+  background-color: #6d84b4;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  clear: both;
+}
+
+.popup-box .popup-head .popup-head-left
+{
+  float: left;
+}
+
+.popup-box .popup-head .popup-head-right{
+  float: right;
+  opacity: 0.5;
+}
+
+.popup-box .popup-head .popup-head-right a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.popup-box .popup-messages {
+  height: 100%;
+  overflow-y: scroll;
+}

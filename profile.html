@@ -13,9 +13,9 @@
 		<div class="navigation">
 			<a class=left href="index.html">Home</a>
 			<container id="searchNav">
-					Find <input type="text" placeholder="Ingredients, recipes, tools...">
-					Near <input type="text" placeholder="Current location">
-					<a href="mapsPage.html"><button>Search</button></a>
+				Find <input type="text" placeholder="Ingredients, recipes, tools...">
+				Near <input type="text" placeholder="Current location">
+				<a href="mapsPage.html"><button>Search</button></a>
 			</container>
 			<a class=right href="profile.html">Profile</a>
 			<a class=right href="forum.html">Forum</a>
@@ -24,11 +24,64 @@
 
 	<div>
 		<div>
-			<h1>Steve</h1>
-			<p>I love cooking!</p>
-			<a href="messaging.html"><button type="button">Message</button></a>
+			<div class = "topProfile">
+				<div class = "row">
+					<div class = "leftCol" id = "pic">
+						<img class="img-thumbnail img-fluid" src="profilePicIcon.png"/>
+					</div>
+					<div class = "rightCol" id = "contact">
+						<h1 id = "name">Steve M.</h1>
+						<p>
+							San Diego, CA
+							<br>
+							<a href="javascript:register_popup('narayan-prusty', 'Steve M.');">
+								<img id = "messageIcon" src = "messengerIcon.png" style = "cursor:pointer">
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div id="row2">
+				<div class="column2" id = "Tools">
+					<div class = "titleProf">
+						<h3>Tools I Own</h3>
+					</div>
+					<div id="nTaskPlace">
+						<div id="addNew">
+							<input id="newTask" type="text">
+							<button id="add"> add </button>
+						</div>
+					</div>
+				</div>
+			<div class="column2">
+				<div class = "titleProf">
+					<h3>Ingredients</h3>
+				</div>
+				<div id="nTaskPlace" id = "Ingredients">
+					<div id="addNew">
+						<input id="newTask" type="text">
+						<button id="add"> add </button>
+					</div>
+				</div>
+			</div>
+			<div class="column2">
+				<div class = "titleProf">
+					<h3>Recipes</h3>
+				</div>
+				<div id="nTaskPlace" id = "Recipes">
+					<div id="addNew">
+						<input id="newTask" type="text">
+						<button id="add"> add </button>
+					</div>
+				</div>
+			</div>
 		</div>
-
 	</div>
+</div>
+
+</div>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/editProfile.js"></script>
+<script src="js/popupMessage.js"></script>
 </body>
 </html>

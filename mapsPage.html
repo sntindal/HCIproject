@@ -78,11 +78,18 @@
 	</div>
 	<div>
 		<p>
-			<a href="profile.html">1. Neighbor 1</a>
+			<a href="profile.html" id = "result1">
+				1. Neighbor 1
+			</a>
+			<script>
+				var name = document.getElementById("result1");
+			</script>
 			<br> Address
 			<br> X.XX miles away
 		</p>
-		<a href="messaging.html"><button type="button">Message</button></a>
+		<a href="javascript:register_popup('narayan-prusty', 'Steve M.');">
+			<img id = "messageIcon" src = "messengerIcon.png" style = "cursor:pointer">
+		</a>
 	</div>
 	<div>
 		<p>
@@ -90,7 +97,9 @@
 			<br> Address
 			<br> X.XX miles away
 		</p>
-		<a href="messaging.html"><button type="button">Message</button></a>
+		<a href="javascript:register_popup('narayan-prusty', 'Steve M.');">
+			<img id = "messageIcon" src = "messengerIcon.png" style = "cursor:pointer">
+		</a>
 	</div>
 	<div>
 		<p>
@@ -98,7 +107,9 @@
 			<br> Address
 			<br> X.XX miles away
 		</p>
-		<a href="messaging.html"><button type="button">Message</button></a>
+		<a href="javascript:register_popup('narayan-prusty', 'Steve M.');">
+			<img id = "messageIcon" src = "messengerIcon.png" style = "cursor:pointer">
+		</a>
 	</div>
 
 		<script async defer
@@ -109,6 +120,7 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/handlebars-v4.0.11.js"></script>
 		<script src="js/search.js"></script>
+		<script src="js/popupMessage.js"></script>
 
 </body>
 </html>
