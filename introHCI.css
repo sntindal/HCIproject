@@ -92,7 +92,7 @@ h1 {
 		color: black;
 }
 
-.navigation button {
+.navigation #submit {
     float: center;
 		padding: 6px;
 		margin-top: 0px;
@@ -105,7 +105,7 @@ h1 {
 		background-color: #6ca2a0;
 }
 
-.navigation .searchbar button {
+ .navigation .searchbar a {
 	float: center;
   width: 100px;
 	height: 30px;
@@ -168,7 +168,7 @@ h1 {
 		font-weight: lighter;
 }
 
-.searchbar button {
+ .searchbar a {
   float: right;
   width: 160px;
 	height: 72px;
@@ -180,4 +180,5 @@ h1 {
 	font-family: "Futura", Verdana, serif;
   border-left: none; /* Prevent double borders */
   cursor: pointer;
+	text-decoration: none;
 }
