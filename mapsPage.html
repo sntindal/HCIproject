@@ -1,0 +1,181 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Search Results Maps Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/introHCI.css" rel="stylesheet" />
+	<link href="css/map.css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<div class="nav">
+		<div class="navigation">
+			<a class=left href="index.html">Home</a>
+			<container id="searchNav">
+				<form name="myform" id="myform" action="" method="get">
+					Find <input id="query" type="text" placeholder="Ingredients, recipes, tools...">
+					Near <input id="address" type="text" placeholder="Current location">
+					<a href="mapsPage.html" data-role="button" id="submit" onclick="processSearch();" value="Search">Search</a>
+					<!--<input id="submit" type="button" value="Search" onclick="processSearch();">-->
+			</container>
+			<a class=right href="profile.html">Profile</a>
+			<a class=right href="forum.html">Forum</a>
+		</div>
+	</div>
+
+	<div>
+
+		<!--https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple-->
+		<div id="map" style="width:400px;height:400px;"></div>
+	    <script>
+			//var input = localStorage.getItem("query");
+			var address = localStorage.getItem("address");
+				//var address = retrieveSearchInfo();
+				/*geocoder.geocode( { 'address': address}, function(results, status) {
+
+					if (status == google.maps.GeocoderStatus.OK) {
+	    			var latitude = results[0].geometry.location.lat();
+	    			var longitude = results[0].geometry.location.lng();
+	    			alert(latitude);
+	    		}
+				});*/
+
+			function initMap() {
+
+				var geocoder = new google.maps.Geocoder();
+				var address = localStorage.getItem("address");
+				geocoder.geocode( { 'address': address}, function(results, status) {
+
+				if (status == google.maps.GeocoderStatus.OK) {
+						latitude = results[0].geometry.location.lat();
+						localStorage.setItem( 'latitude', latitude);
+						longitude = results[0].geometry.location.lng();
+						localStorage.setItem( 'longitude', longitude);
+					}
+				});
+				var latitude = localStorage.getItem("latitude");
+				var longitude = localStorage.getItem('longitude');
+
+				// DO NOT DO THIS IN PRODUCTION CODE
+				// SANITIZE YOUR STRINGS IN LOCAL STORAGE BEFORE PARSING
+				var map = new google.maps.Map(document.getElementById('map'), {
+	          zoom: 8,
+	          center: {lat: parseFloat(latitude), lng: parseFloat(longitude)}
+	        });
+				//alert(center);
+				/*var latlng = new google.maps.LatLng(latitude, longitude);
+    		var mapOptions = {
+      		zoom: 8,
+      		center: latlng
+    		}
+				map = new google.maps.Map(document.getElementById('map'), mapOtions);*/
+        //var geocoder = new google.maps.Geocoder();
+			/*	address = document.getElementById('address').value;
+				localStorage.setItem( 'address', address);*/
+
+        document.getElementById('submit').addEventListener('click', function() {
+          geocodeAddress(geocoder, map);
+        });
+      }
+
+      /*function geocodeAddress(geocoder, resultsMap) {
+				//var address = localStorage.getItem('customAddress');
+        var address = document.getElementById('address').value;
+				//localStorage.setItem('customAddress', address);
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }*/
+	  	</script>
+
+			<h1> Search Results for <h1 id="result"></h1></h1>
+			<script>
+			document.getElementById("result").innerHTML = localStorage.getItem("input");
+			</script>
+
+		<p>
+			Here are some neigbors who have what you're looking for!
+		</p>
+	</div>
+<!--	<div>
+		<p>
+			<a href="profile.html" id = "result1">
+				1. Neighbor 1
+			</a>
+			<script>
+				var name = document.getElementById("result1");
+			</script>
+			<br> Address
+			<br> X.XX miles away
+		</p>
+		<a href="javascript:register_popup('narayan-prusty', 'Steve M.');">
+			<img id = "messageIcon" src = "messengerIcon.png" style = "cursor:pointer">
+		</a>
+	</div>
+	<div>
+		<p>
+			<a href="profile.html">2. Neighbor 2</a>
+			<br> Address
+			<br> X.XX miles away
+		</p>
+		<a href="javascript:register_popup('narayan-prusty', 'Steve M.');">
+			<img id = "messageIcon" src = "messengerIcon.png" style = "cursor:pointer">
+		</a>
+	</div>
+	<div>
+		<p>
+			<a href="profile.html">3. Neighbor 3</a>
+			<br> Address
+			<br> X.XX miles away
+		</p>
+		<a href="javascript:register_popup('narayan-prusty', 'Steve M.');">
+			<img id = "messageIcon" src = "messengerIcon.png" style = "cursor:pointer">
+		</a>
+	</div>-->
+
+	<!-- TEMPLATE FOR SEARCH RESULTS -->
+	<script id="entry-template" type="text/x-handlebars-template">
+			<div>
+			<p>
+				<a href="profile.html"> {{name}}</a>
+				<br>{{location}}
+				<br>{{Ingredients}}
+			</p>
+			<a href="javascript:register_popup('narayan-prusty', 'Steve M.');">
+				<img id = "messageIcon" src = "messengerIcon.png" style = "cursor:pointer">
+			</a>
+			</div>
+		</script>
+
+		    <div id="templatedProjects">
+		      <!-- we will inject templated project HTML code into here -->
+	 		</div>
+
+
+
+
+		<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrsYMYyM3U9VvOXL06tT0VDgV1SJGtGp4&callback=initMap">
+		</script>
+
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/handlebars-v4.0.11.js"></script>
+		<script src="js/search.js"></script>
+		<script src="js/popupMessage.js"></script>
+
+</body>
+</html>
