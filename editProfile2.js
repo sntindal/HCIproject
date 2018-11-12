@@ -1,14 +1,14 @@
-var newtask = document.getElementById( 'newTask' );
-var btn = document.getElementById( 'add' );
-var nTaskPlace = document.getElementById( 'nTaskPlace' );
+var newtask2 = document.getElementById( 'newTask2' );
+var btn = document.getElementById( 'add2' );
+var nTaskPlace2 = document.getElementById( 'nTaskPlace2' );
 
-var AddTask = function() {
+var AddTask2 = function() {
 		var containerDiv = document.createElement( 'div' );
     var paragraph = document.createElement( 'p' );
-    paragraph.innerHTML = newtask.value;
+    paragraph.innerHTML = newtask2.value;
     var editInput = document.createElement( 'input' );
     editInput.style.display= 'none';
-    editInput.value = newtask.value;
+    editInput.value = newtask2.value;
     var btnEdit = document.createElement( 'button' );
     btnEdit.innerHTML = 'Edit';
     var btnSave = document.createElement( 'button' );
@@ -32,7 +32,7 @@ var AddTask = function() {
     containerDiv.appendChild( editInput );
     containerDiv.appendChild( btnEdit );
     containerDiv.appendChild( btnSave );
-    newtask.value = '';
-    nTaskPlace.insertBefore( containerDiv, nTaskPlace.firstChild );
+    newtask2.value = '';
+    nTaskPlace2.insertBefore( containerDiv, nTaskPlace2.firstChild );
 }
- btn.addEventListener( 'click', AddTask );
+ btn.addEventListener( 'click', AddTask2 );
