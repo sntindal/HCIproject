@@ -28,13 +28,6 @@
 	</div>
 
 	<div>
-<!--<script>
-		var myData = localStorage['objectToPass'];
-		localStorage.removeItem( 'objectToPass' ); // Clear the localStorage
-		var query = myData[0];
-		var address = myData[1];
-		//alert('firstData: ' + firstData + '\nsecondData: ' + secondData);
-	</script>-->
 
 		<!--https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple-->
 		<div id="map" style="width:400px;height:400px;"></div>
@@ -51,9 +44,10 @@
 	    			alert(latitude);
 	    		}
 				});*/
+
 			function initMap() {
 				var latitude;
-				var longitude;
+			  var longitude;
 				var geocoder = new google.maps.Geocoder();
 				//var address = localStorage.getItem('address');
 				geocoder.geocode( { 'address': address}, function(results, status) {
@@ -66,13 +60,15 @@
 						alert(latitude);
 					}
 				});
-				latitude = localStorage.getItem("latitude").value;
-				longitude = localStorage.getItem("longitude").value;
+				latitude = localStorage.getItem("latitude");
+				longitude = localStorage.getItem("longitude");
 				alert(latitude);
-
+				
+				// DO NOT DO THIS IN PRODUCTION CODE
+				// SANITIZE YOUR STRINGS IN LOCAL STORAGE BEFORE PARSING
 				var map = new google.maps.Map(document.getElementById('map'), {
 	          zoom: 8,
-	          center: {lat: -34.397, lng: 150.644}
+	          center: {lat: parseFloat(latitude), lng: parseFloat(longitude)}
 	        });
 				//alert(center);
 				/*var latlng = new google.maps.LatLng(latitude, longitude);
@@ -108,14 +104,13 @@
       }*/
 	  	</script>
 
-<<<<<<< HEAD
 			<h1> Search Results for <p id="result"></p></h1>
 			<script>
 			document.getElementById("result").innerHTML = document.getElementById("query").value;
 			</script>
-=======
+
 			<h1>Search Results</h1>
->>>>>>> aef955bcb50153967aaa4a4a75e59afca0e85d09
+
 
 		<p>
 			Here are some neigbors who have what you're looking for!

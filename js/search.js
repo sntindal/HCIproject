@@ -1,6 +1,6 @@
 function processSearch(){
-    var input = document.myform.query.value;
-    var address = document.myform.address.value;
+    var input = $("#query").val();
+    var address = $("#address").val();
 
     localStorage.setItem("input", input);
     localStorage.setItem("address", address);

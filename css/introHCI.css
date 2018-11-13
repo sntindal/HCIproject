@@ -263,7 +263,7 @@ color: white;
 	float: left;
 }
 
-#myText {
+.forumComment {
 	font-size: 15px;
 	color:black;
 	font-family: "Futura", Verdana, serif;
@@ -271,7 +271,6 @@ color: white;
 	padding: 10px;
 }
 
-<<<<<<< HEAD
 .topProfile row1{
   float: left;
   padding: 10px;
@@ -402,7 +401,6 @@ body
   height: 100%;
   overflow-y: scroll;
 }
-=======
 .loginButton {
 	background-color: clear; /* Green */
 	border: none;
@@ -431,4 +429,3 @@ body
 
 
 
->>>>>>> e8b82190686b0851af3015a06b6bbd474dfb7737
