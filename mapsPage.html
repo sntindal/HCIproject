@@ -11,6 +11,8 @@
 
 <body>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 	<div class="nav">
 		<div class="navigation">
 			<a class=left href="index.html">Home</a>
@@ -18,7 +20,8 @@
 				<form name="myform" id="myform" action="" method="get">
 					Find <input id="query" type="text" placeholder="Ingredients, recipes, tools...">
 					Near <input id="address" type="text" placeholder="Current location">
-					<input id="submit" type="button" value="Search" onclick="processSearch();">
+					<a href="mapsPage.html" data-role="button" id="submit" onclick="processSearch();" value="Search">Search</a>
+					<!--<input id="submit" type="button" value="Search" onclick="processSearch();">-->
 			</container>
 			<a class=right href="profile.html">Profile</a>
 			<a class=right href="forum.html">Forum</a>
@@ -26,21 +29,13 @@
 	</div>
 
 	<div>
-<!--<script>
-		var myData = localStorage['objectToPass'];
-		localStorage.removeItem( 'objectToPass' ); // Clear the localStorage
-		var query = myData[0];
-		var address = myData[1];
-		//alert('firstData: ' + firstData + '\nsecondData: ' + secondData);
-	</script>-->
 
 		<!--https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple-->
 		<div id="map" style="width:400px;height:400px;"></div>
 	    <script>
-			var input = localStorage.getItem("query");
+			//var input = localStorage.getItem("query");
 			var address = localStorage.getItem("address");
 				//var address = retrieveSearchInfo();
-				alert(address);
 				/*geocoder.geocode( { 'address': address}, function(results, status) {
 
 					if (status == google.maps.GeocoderStatus.OK) {
@@ -49,28 +44,28 @@
 	    			alert(latitude);
 	    		}
 				});*/
+
 			function initMap() {
-				var latitude;
-				var longitude;
+
 				var geocoder = new google.maps.Geocoder();
-				//var address = localStorage.getItem('address');
+				var address = localStorage.getItem("address");
 				geocoder.geocode( { 'address': address}, function(results, status) {
 
-					if (status == google.maps.GeocoderStatus.OK) {
+				if (status == google.maps.GeocoderStatus.OK) {
 						latitude = results[0].geometry.location.lat();
 						localStorage.setItem( 'latitude', latitude);
 						longitude = results[0].geometry.location.lng();
 						localStorage.setItem( 'longitude', longitude);
-						alert(latitude);
 					}
 				});
-				latitude = localStorage.getItem("latitude").value;
-				longitude = localStorage.getItem("longitude").value;
-				alert(latitude);
+				var latitude = localStorage.getItem("latitude");
+				var longitude = localStorage.getItem('longitude');
 
+				// DO NOT DO THIS IN PRODUCTION CODE
+				// SANITIZE YOUR STRINGS IN LOCAL STORAGE BEFORE PARSING
 				var map = new google.maps.Map(document.getElementById('map'), {
 	          zoom: 8,
-	          center: {lat: -34.397, lng: 150.644}
+	          center: {lat: parseFloat(latitude), lng: parseFloat(longitude)}
 	        });
 				//alert(center);
 				/*var latlng = new google.maps.LatLng(latitude, longitude);
@@ -80,8 +75,8 @@
     		}
 				map = new google.maps.Map(document.getElementById('map'), mapOtions);*/
         //var geocoder = new google.maps.Geocoder();
-				address = document.getElementById('address').value;
-				localStorage.setItem( 'address', address);
+			/*	address = document.getElementById('address').value;
+				localStorage.setItem( 'address', address);*/
 
         document.getElementById('submit').addEventListener('click', function() {
           geocodeAddress(geocoder, map);
@@ -106,13 +101,16 @@
       }*/
 	  	</script>
 
-			<h1> Search Results for "input"</h1>
+			<h1> Search Results for <h1 id="result"></h1></h1>
+			<script>
+			document.getElementById("result").innerHTML = localStorage.getItem("input");
+			</script>
 
 		<p>
 			Here are some neigbors who have what you're looking for!
 		</p>
 	</div>
-	<div>
+<!--	<div>
 		<p>
 			<a href="profile.html" id = "result1">
 				1. Neighbor 1
@@ -146,13 +144,28 @@
 		<a href="javascript:register_popup('narayan-prusty', 'Steve M.');">
 			<img id = "messageIcon" src = "messengerIcon.png" style = "cursor:pointer">
 		</a>
-	</div>
-	<div class="card">
-			<h4><b>Map of neighbors with item in your area!</b></h4>
-			<img src="" alt="Map" style="width:100%">
-			<div class="container">
+	</div>-->
+
+	<!-- TEMPLATE FOR SEARCH RESULTS -->
+	<script id="entry-template" type="text/x-handlebars-template">
+			<div>
+			<p>
+				<a href="profile.html"> {{name}}</a>
+				<br>{{location}}
+				<br>{{Ingredients}}
+			</p>
+			<a href="javascript:register_popup('narayan-prusty', 'Steve M.');">
+				<img id = "messageIcon" src = "messengerIcon.png" style = "cursor:pointer">
+			</a>
 			</div>
-  </div>
+		</script>
+
+		    <div id="templatedProjects">
+		      <!-- we will inject templated project HTML code into here -->
+	 		</div>
+
+
+
 
 		<script async defer
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrsYMYyM3U9VvOXL06tT0VDgV1SJGtGp4&callback=initMap">
