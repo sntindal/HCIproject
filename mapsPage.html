@@ -46,7 +46,12 @@
 				});*/
 
 			function initMap() {
+<<<<<<< HEAD
 
+=======
+				var latitude;
+			  var longitude;
+>>>>>>> f8b772077292635d6fdadc14cccd1155dee129c9
 				var geocoder = new google.maps.Geocoder();
 				var address = localStorage.getItem("address");
 				geocoder.geocode( { 'address': address}, function(results, status) {
@@ -58,9 +63,16 @@
 						localStorage.setItem( 'longitude', longitude);
 					}
 				});
+<<<<<<< HEAD
 				var latitude = localStorage.getItem("latitude");
 				var longitude = localStorage.getItem('longitude');
 
+=======
+				latitude = localStorage.getItem("latitude");
+				longitude = localStorage.getItem("longitude");
+				alert(latitude);
+				
+>>>>>>> f8b772077292635d6fdadc14cccd1155dee129c9
 				// DO NOT DO THIS IN PRODUCTION CODE
 				// SANITIZE YOUR STRINGS IN LOCAL STORAGE BEFORE PARSING
 				var map = new google.maps.Map(document.getElementById('map'), {
@@ -101,10 +113,20 @@
       }*/
 	  	</script>
 
+<<<<<<< HEAD
 			<h1> Search Results for <h1 id="result"></h1></h1>
+=======
+			<h1> Search Results for <p id="result"></p></h1>
+>>>>>>> f8b772077292635d6fdadc14cccd1155dee129c9
 			<script>
 			document.getElementById("result").innerHTML = localStorage.getItem("input");
 			</script>
+<<<<<<< HEAD
+=======
+
+			<h1>Search Results</h1>
+
+>>>>>>> f8b772077292635d6fdadc14cccd1155dee129c9
 
 		<p>
 			Here are some neigbors who have what you're looking for!
