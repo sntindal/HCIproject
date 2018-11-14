@@ -29,8 +29,14 @@
 	</div>
 
 	<div>
+<script>
+		var myData = localStorage['objectToPass'];
+		localStorage.removeItem( 'objectToPass' ); // Clear the localStorage
+		var query = myData[0];
+		var address = myData[1];
+		//alert('firstData: ' + firstData + '\nsecondData: ' + secondData);
+	</script>
 
-		<!--https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple-->
 		<div id="map" style="width:400px;height:400px;"></div>
 	    <script>
 			//var input = localStorage.getItem("query");

@@ -29,22 +29,28 @@
 					<div class = "leftCol" id = "pic">
 						<img class="img-thumbnail img-fluid" src="profilePicIcon.png"/>
 					</div>
+
+
 					<div class = "rightCol" id = "contact">
-						<h1 id = "name">Steve M.</h1>
-						<p>
-							San Diego, CA
-							<br>
+						<h1 id="result"></h1>
+						<script>
+						document.getElementById("result").innerHTML = localStorage.getItem("username");
+						</script>
+						<p id="userLocation"></p>
 							<a href="javascript:register_popup('narayan-prusty', 'Steve M.');">
 								<img id = "messageIcon" src = "messengerIcon.png" style = "cursor:pointer">
 							</a>
-						</p>
+						<script>
+						document.getElementById("userLocation").innerHTML = localStorage.getItem("location");
+						</script>
+
 					</div>
 				</div>
 			</div>
 			<div id="row2">
 				<div class="column2" id = "Tools">
 					<div class = "titleProf">
-						<h3>Tools I Own</h3>
+						<h3>My Tools</h3>
 					</div>
 					<div id="nTaskPlace">
 						<div id="addNew">
@@ -55,7 +61,7 @@
 				</div>
 			<div class="column2">
 				<div class = "titleProf">
-					<h3>Ingredients</h3>
+					<h3>My Ingredients</h3>
 				</div>
 				<div id="nTaskPlace2" id = "Ingredients">
 					<div id="addNew2">
@@ -66,7 +72,7 @@
 			</div>
 			<div class="column2">
 				<div class = "titleProf">
-					<h3>Recipes</h3>
+					<h3>My Recipes</h3>
 				</div>
 				<div id="nTaskPlace3" id = "Recipes">
 					<div id="addNew3">
@@ -80,10 +86,15 @@
 </div>
 
 </div>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/editProfile.js"></script>
-<script src="js/editProfile2.js"></script>
-<script src="js/editProfile3.js"></script>
-<script src="js/popupMessage.js"></script>
+
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/handlebars-v4.0.11.js"></script>
+		<script src="js/editProfile.js"></script>
+		<script src="js/editProfile2.js"></script>
+		<script src="js/editProfile3.js"></script>
+		<script src="js/popupMessage.js"></script>
+		<script src="js/profile.js"></script>
+
 </body>
 </html>
