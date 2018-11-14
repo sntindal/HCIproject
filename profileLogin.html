@@ -9,18 +9,19 @@
 </head>
 
 <header>
-    <div class="nav">
-        <div class="navigation">
-            <a class=left href="index.html">Home</a>
-            <container id="searchNav">
-                    Find <input type="text" placeholder="Ingredients, recipes, tools...">
-                    Near <input type="text" placeholder="Current location">
-                    <a href="mapsPage.html"><button>Search</button></a>
-            </container>
-            <a class=right href="profileLogin.html">Profile</a>
-            <a class=right href="forum.html">Forum</a>
-        </div>
-    </div>
+	<div class="nav">
+		<div class="navigation">
+			<a class=left href="index.html">Home</a>
+			<container id="searchNav">
+				<form name="myform" id="myform" action="" method="get">
+					Find <input id="query" type="text" placeholder="Ingredients, recipes, tools...">
+					Near <input id="address" type="text" placeholder="Current location">
+					<a href="mapsPage.html" data-role="button" id="submit" onclick="processSearch();" value="Search">Search</a>
+			</container>
+			<a class=right href="profile.html">Profile</a>
+			<a class=right href="forum.html">Forum</a>
+		</div>
+	</div>
 </header>
 
 <body style="margin-bottom: 30px">
@@ -34,16 +35,18 @@
     <div class="container">
         <div class="first">
             <h3 id="logintext">Login</h3>
-            <div class="login">
-                <input type="text" placeholder="Email or Username">
-            </div>
-            <br>
-            <div class="login">
-                <input type="text" placeholder="Password">
-            </div>
-            <br>
-            <a href="profile.html"><button type="button" class="loginButton">Login!</button></a>
-            
+						<container id="loginSection">
+							<form name="loginform" id="loginform" action="" method="get">
+	            <div class="login">
+	                <input id="username" type="text" placeholder="Username">
+	            </div>
+	            <br>
+	            <div class="login">
+	                <input id="password" type="text" placeholder="Password">
+	            </div>
+	            <br>
+	            <a href="profile.html" data-role="button" id="login" class="loginButton" onclick="processLogin()" value="search">Login!</a>
+					</container>
         </div>
 
         <div class="second">
@@ -51,26 +54,40 @@
             <p id="logintext">Sign up to comment in forums, save recipes, and share your cooking tools and ideas with your community.
                 It's absolutly free, so let's get cooking today!
             </p>
-            <div class="login">
-                <input type="text" placeholder="First and Last Name">
-            </div>
-            <br>
-            <div class="login">
-                <input type="text" placeholder="Email Address">
-            </div>
-            <br>
-            <div class="login">
-               <input type="text" placeholder="Address">
-            </div>
-            <br>
-            <div class="login">
-                <input type="text" placeholder="Password">
-            </div>
-            <br>
-            <div class="login">
-                <input type="text" placeholder="Confirm Password">
-            </div>
-            <br>
-            <a href="profile.html"><button type="button" class="loginButton">Login!</button></a>
+						<container id="signupSection">
+							<form name="signupform" id="signupform" action="" method="get">
+	            <div class="login">
+	                <input id="name" type="text" placeholder="First and Last Name">
+	            </div>
+	            <br>
+	            <div class="login">
+	                <input id="email" type="text" placeholder="Email Address">
+	            </div>
+	            <br>
+	            <div class="login">
+	               <input id="location" type="text" placeholder="Address">
+	            </div>
+	            <br>
+	            <div class="login">
+	                <input id="password2" type="text" placeholder="Password">
+	            </div>
+	            <br>
+	            <div class="login">
+	                <input type="password" placeholder="Confirm Password">
+	            </div>
+	            <br>
+	            <a href="profile.html" data-role="button" id="signup" class="loginButton" onclick="processSignup()" value="search">Login!</a>
+
+						</container>
         </div>
-</body>
+
+
+
+					<script src="https://code.jquery.com/jquery.js"></script>
+					<script src="js/bootstrap.min.js"></script>
+					<script src="js/introHCI.js"></script>
+					<script src="js/search.js"></script>
+					<script src="js/profile.js"></script>
+
+	</body>
+</html>
