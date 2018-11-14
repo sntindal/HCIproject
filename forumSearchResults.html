@@ -1,0 +1,48 @@
+<!doctype html>
+
+<head>
+	<title>Forum Search Results</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/introHCI.css" rel="stylesheet" />
+	<link href="css/map.css" rel="stylesheet" />
+</head>
+
+<header>
+    <div class="nav">
+		<div class="navigation">
+			<a class=left href="index.html">Home</a>
+			<container id="searchNav">
+				<form name="myform" id="myform" action="" method="get">
+					Find <input id="query" type="text" placeholder="Ingredients, recipes, tools...">
+					Near <input id="address" type="text" placeholder="Current location">
+					<a href="mapsPage.html" data-role="button" id="submit" onclick="processSearch();" value="Search">Search</a>
+					<!--<input id="submit" type="button" value="Search" onclick="processSearch();">-->
+			</container>
+			<a class=right href="profile.html">Profile</a>
+			<a class=right href="forum.html">Forum</a>
+		</div>
+	</div>
+</header>
+
+<body>
+
+        <script id="forumResultsTemplate" type="text/x-handlebars-template">
+			<div>
+			<p>
+				{{name}}
+				<br>{{Question}}
+            </p>
+			</div>
+		</script>
+
+		    <div id="forumResults">
+		      <!-- we will inject templated project HTML code into here -->
+	 		</div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/handlebars-v4.0.11.js"></script>
+    <script src="js/forumSearch.js"></script>
+
+</body>
