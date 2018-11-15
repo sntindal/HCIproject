@@ -37,6 +37,7 @@
 						document.getElementById("result").innerHTML = localStorage.getItem("username");
 						</script>
 						<p id="userLocation"></p>
+							<br>
 							<a href="javascript:register_popup('narayan-prusty', 'Steve M.');">
 								<img id = "messageIcon" src = "messengerIcon.png" style = "cursor:pointer">
 							</a>
@@ -59,6 +60,23 @@
 						</div>
 					</div>
 				</div>
+
+				<script id="entry-template" type="text/x-handlebars-template">
+						<div>
+						<p>{userTools}</p>
+						</div>
+					</script>
+
+					    <div id="templatedProjects">
+					      <!-- we will inject templated project HTML code into here -->
+				 		</div>
+
+
+
+
+
+
+
 			<div class="column2">
 				<div class = "titleProf">
 					<h3>My Ingredients</h3>

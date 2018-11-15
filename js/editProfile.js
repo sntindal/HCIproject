@@ -1,6 +1,22 @@
 var newtask = document.getElementById( 'newTask' );
 var btn = document.getElementById( 'add' );
 var nTaskPlace = document.getElementById( 'nTaskPlace' );
+var userTools = [];
+
+//localStorage.setItem("tool", newtask);
+userTools[0] = newtask;
+userTools.push(newtask);
+console.log(userTools);
+alert("Saved: " + localStorage.getItem("newtask"));
+
+    var tool = $("#newTask").val();
+
+    localStorage.setItem("tool", tool);
+    userTools.push(tool);
+    alert("Saved: " + localStorage.getItem("tool"));
+
+
+
 
 var AddTask = function() {
 		var containerDiv = document.createElement( 'div' );

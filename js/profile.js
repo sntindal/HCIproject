@@ -16,6 +16,16 @@ function processSignup(){
     alert("Saved: " + localStorage.getItem("username") + ", and " + localStorage.getItem("location"));
 }
 
+function addTool(){
+    var tool = $("#newTool").val();
+
+    localStorage.setItem("tool", tool);
+    userTools.push(tool);
+    alert("Saved: " + localStorage.getItem("tool"));
+}
+
+
+
 function clearSearch(){
     $('#loginform').get(0).reset();
 }
