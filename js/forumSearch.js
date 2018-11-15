@@ -14,9 +14,9 @@ function retrieveSearchInfo(){
 }
 
 var forumData = [
-    {'name': 'Sarah', 'Question': ['whisk egg']},
+    {'name': 'Sarah', 'Question': ['How to make egg whites fluffy?'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'whites','fluffy']},
     {'name': 'Joe', 'Question': ['cook']},
-    {'name': 'Eric', 'Question': ['eggs']},
+    {'name': 'Eric', 'Question': ['whisk egg']},
     {'name': 'Steve', 'Question': ['pasta']},
 ]
 
@@ -47,30 +47,40 @@ $(document).ready(function() {
   }
 } */
 
-var input = localStorage.getItem("input");
+input = localStorage.getItem("input").toLowerCase();
+localStorage.setItem("input", input.split(" "));
+input = localStorage.getItem("input");
 
-console.log(input);
+console.log(Array.from(input));
+
+// console.log(input);
+// console.log(input.length);
+
+// var res = input.split(" ");
+// document.getElementById("forumResults").innerHTML = res;
+
+
+
 var source   = $("#forumResultsTemplate").html();
 var template = Handlebars.compile(source);
 
 var parentDiv = $("#forumResults");
 
+var count = 0;
 for (var i = 0; i < forumData.length; i++) {
     var curData = forumData[i];
-    if(curData["Question"] == input ){
+    if(curData["keyword"] == input ){
       console.log(curData["name"]);
       var curHtml = template(curData);
         parentDiv.append(curHtml);
-      //check for ingredient
-     /*  for(var x = 0; x<curData["Ingredients"].length; x++){
-        console.log(curData["Ingredients"][x]);
-        if(curData["Ingredients"][x] == input){
-          var curHtml = template(curData);
-          parentDiv.append(curHtml);
+        count = count + 1;
+    } 
+    localStorage.setItem("count", count);
+    count = localStorage.getItem("count");
+    if (count == 0) {
+            return parentDiv.append("Sorry, please try again!");
         }
-      } */
-
     }
 
-}
 })
+
