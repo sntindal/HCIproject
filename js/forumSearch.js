@@ -15,10 +15,13 @@ function retrieveSearchInfo(){
 
 var forumData = [
     {'name': 'Sarah', 'Question': ['How to make egg whites fluffy?'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'whites','fluffy']},
-    {'name': 'Joe', 'Question': ['cook']},
-    {'name': 'Eric', 'Question': ['whisk egg']},
-    {'name': 'Steve', 'Question': ['pasta']},
+    {'name': 'Joe', 'Question': ['How to bake cookies'], 'link':'forumAnswers1.html', 'keyword': ['sugar', 'cookie','flour']},
+    {'name': 'Eric', 'Question': ['How to use a crock pot'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'whites','fluffy']},
+    {'name': 'Steve', 'Question': ['How to cook pasta'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'whites','fluffy']},
 ]
+
+var forumDataTEMP = forumData;
+ 
 
 /* function filterQuestion() {
     var str = "input"; 
@@ -48,10 +51,21 @@ $(document).ready(function() {
 } */
 
 input = localStorage.getItem("input").toLowerCase();
-localStorage.setItem("input", input.split(" "));
-input = localStorage.getItem("input");
+// localStorage.setItem("input", input.split(' '));
+input = localStorage.getItem("input").split(' ');
+// var wordArray=input.split(' ');
 
-console.log(Array.from(input));
+
+console.log(input);
+// console.log(wordArray);
+
+// var wordArray = [];
+// var words = input;
+// for ( //1 ) {
+// wordArray.push( //2 );
+// }
+
+// console.log(Array.from(input));
 
 // console.log(input);
 // console.log(input.length);
@@ -67,9 +81,10 @@ var template = Handlebars.compile(source);
 var parentDiv = $("#forumResults");
 
 var count = 0;
-for (var i = 0; i < forumData.length; i++) {
+
+/* for (var i = 0; i < forumData.length; i++) { //goes through all data
     var curData = forumData[i];
-    if(curData["keyword"] == input ){
+    if(curData["keyword"] == input ){ //
       console.log(curData["name"]);
       var curHtml = template(curData);
         parentDiv.append(curHtml);
@@ -80,7 +95,52 @@ for (var i = 0; i < forumData.length; i++) {
     if (count == 0) {
             return parentDiv.append("Sorry, please try again!");
         }
+    } */
+
+
+/* new CODE */
+    var count = 0;
+for (var i = 0; i < forumDataTEMP.length; i++) { //goes through all data
+    var curData = forumDataTEMP[i];
+    console.log(forumDataTEMP[i]);
+    for (var j = 0; j < curData["keyword"].length; j++){
+        //console.log("secondforloop");
+        for (var k = 0; k < input.length; k++) {
+            //console.log("thirdforloop")
+            if (curData["keyword"][j] == input[k] ) {
+                // console.log(forumData["name"]);
+                //console.log("ITS WORKING");
+                var forumHtml = template(curData);
+                parentDiv.append(forumHtml);
+                //forumDataTEMP.splice(i,1); //to remove element array
+                delete forumDataTEMP[ i ];
+                //forumDataTEMP[i].push("'name': 'blank', 'question': 'blank', 'keyword': ['blank']");
+                count = count + 1;
+                console.log(forumHtml);
+                console.log(forumDataTEMP);
+                break;
+            }
+        }
+        break;
     }
+}
+
+
+/* 
+    if (curData["keyword"] == input ){ //
+      console.log(curData["name"]);
+      var forumHtml = template(forumData);
+        parentDiv.append(forumHtml);
+        count = count + 1;
+    } 
+
+
+    localStorage.setItem("count", count);
+    count = localStorage.getItem("count");
+    if (count == 0) {
+            return parentDiv.append("Sorry, please try again!");
+        }
+    } */
 
 })
 
