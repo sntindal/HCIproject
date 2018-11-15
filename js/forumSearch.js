@@ -14,17 +14,19 @@ function retrieveSearchInfo(){
 }
 
 var forumData = [
-    {'name': 'Sarah', 'Question': ['How to make egg whites fluffy?'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'whites','fluffy']},
-    {'name': 'Joe', 'Question': ['How to bake cookies'], 'link':'forumAnswers1.html', 'keyword': ['sugar', 'cookie','flour']},
-    {'name': 'Eric', 'Question': ['How to use a crock pot'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'whites','fluffy']},
-    {'name': 'Steve', 'Question': ['How to cook pasta'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'whites','fluffy']},
+    {'name': 'Sarah', 'Question': ['How to make egg whites fluffy without a hand-mixer?'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'eggs' 'whites','fluffy', 'hand-mixer']},
+    {'name': 'Joe', 'Question': ['What are some good egg free recipes'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'free','recipes', 'recipe']},
+    {'name': 'Eric', 'Question': ['How do I use a crock pot'], 'link':'forumAnswers1.html', 'keyword': ['crock pot']},
+    {'name': 'Steve', 'Question': ['How to cook pasta'], 'link':'forumAnswers1.html', 'keyword': ['pasta']},
+    {'name': 'Sarah', 'Question': ['How to make egg whites fluffy without a hand-mixer?'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'eggs' 'whites','fluffy', 'hand-mixer']},
+
 ]
 
 var forumDataTEMP = forumData;
- 
+
 
 /* function filterQuestion() {
-    var str = "input"; 
+    var str = "input";
     var n = str.search("curData["Question"][x]");
     if ( n >= 0) {
     document.getElementById("demo").innerHTML = str;
@@ -56,7 +58,7 @@ input = localStorage.getItem("input").split(' ');
 // var wordArray=input.split(' ');
 
 
-console.log(input);
+//console.log(input);
 // console.log(wordArray);
 
 // var wordArray = [];
@@ -89,7 +91,7 @@ var count = 0;
       var curHtml = template(curData);
         parentDiv.append(curHtml);
         count = count + 1;
-    } 
+    }
     localStorage.setItem("count", count);
     count = localStorage.getItem("count");
     if (count == 0) {
@@ -100,9 +102,11 @@ var count = 0;
 
 /* new CODE */
     var count = 0;
+    var foundResult = false;
 for (var i = 0; i < forumDataTEMP.length; i++) { //goes through all data
     var curData = forumDataTEMP[i];
-    console.log(forumDataTEMP[i]);
+    //console.log(forumDataTEMP[i]);
+    //console.log(curData);
     for (var j = 0; j < curData["keyword"].length; j++){
         //console.log("secondforloop");
         for (var k = 0; k < input.length; k++) {
@@ -110,29 +114,34 @@ for (var i = 0; i < forumDataTEMP.length; i++) { //goes through all data
             if (curData["keyword"][j] == input[k] ) {
                 // console.log(forumData["name"]);
                 //console.log("ITS WORKING");
-                var forumHtml = template(curData);
+                var forumHtml = template(forumDataTEMP[i]);
                 parentDiv.append(forumHtml);
                 //forumDataTEMP.splice(i,1); //to remove element array
                 delete forumDataTEMP[ i ];
+                //delete curData;
                 //forumDataTEMP[i].push("'name': 'blank', 'question': 'blank', 'keyword': ['blank']");
                 count = count + 1;
                 console.log(forumHtml);
-                console.log(forumDataTEMP);
+                //console.log(forumDataTEMP);
+                foundResult = true;
                 break;
             }
         }
-        break;
+        if(foundResult == true){
+          foundResult = false;
+          break;
+        }
     }
 }
 
 
-/* 
+/*
     if (curData["keyword"] == input ){ //
       console.log(curData["name"]);
       var forumHtml = template(forumData);
         parentDiv.append(forumHtml);
         count = count + 1;
-    } 
+    }
 
 
     localStorage.setItem("count", count);
@@ -143,4 +152,3 @@ for (var i = 0; i < forumDataTEMP.length; i++) { //goes through all data
     } */
 
 })
-
