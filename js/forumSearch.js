@@ -14,90 +14,38 @@ function retrieveSearchInfo(){
 }
 
 var forumData = [
-    {'name': 'Sarah', 'Question': ['How to make egg whites fluffy without a hand-mixer?'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'eggs' 'whites','fluffy', 'hand-mixer']},
-    {'name': 'Joe', 'Question': ['What are some good egg free recipes'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'free','recipes', 'recipe']},
-    {'name': 'Eric', 'Question': ['How do I use a crock pot'], 'link':'forumAnswers1.html', 'keyword': ['crock pot']},
-    {'name': 'Steve', 'Question': ['How to cook pasta'], 'link':'forumAnswers1.html', 'keyword': ['pasta']},
-    {'name': 'Sarah', 'Question': ['How to make egg whites fluffy without a hand-mixer?'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'eggs' 'whites','fluffy', 'hand-mixer']},
+    {'name': 'Steve', 'Question': ['How to make egg whites fluffy without a hand-mixer?'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'eggs', 'whites', 'hand-mixer']},
+    {'name': 'Jack', 'Question': ['What kind of pan should I use to sear steak?'], 'link':'forumAnswers1.html', 'keyword': ['pan', 'sear', 'steak']},
+    {'name': 'Amy', 'Question': ['How do I use a crock pot?'], 'link':'forumAnswers1.html', 'keyword': ['crock pot']},
+    {'name': 'Johnny', 'Question': ['Is it safe to cook chicken in a slow cooker?'], 'link':'forumAnswers1.html', 'keyword': ['safe', 'chicken', 'slow cooker']},
+    {'name': 'Gabby', 'Question': ['What are the must have knives?'], 'link':'forumAnswers1.html', 'keyword': ['knives', 'knife', 'must']},
+    {'name': 'Joe', 'Question': ['What are some good egg free recipes?'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'free','recipes', 'recipe']},
+    {'name': 'Jenny', 'Question': ['How to cook pasta.'], 'link':'forumAnswers1.html', 'keyword': ['pasta']},
+    {'name': 'Tammy', 'Question': ['What are some good gluten free banana bread recipes?'], 'link':'forumAnswers1.html', 'keyword': ['gluten', 'free', 'banana', 'bread', 'recipe']},
+    {'name': 'Darren', 'Question': ['Does anyone have a vegetarian jambalaya recipe?'], 'link':'forumAnswers1.html', 'keyword': ['vegetarian', 'jambalaya', 'recipe']},
+    {'name': 'Tom', 'Question': ['Tips for doubling a recipe?'], 'link':'forumAnswers1.html', 'keyword': ['tips', 'doubling', 'double', 'recipe']},
+    {'name': 'Bob', 'Question': ['What are some good substitutes for vanilla extract?'], 'link':'forumAnswers1.html', 'keyword': ['vanilla', 'extract', 'substitute','substitutes']},
+    {'name': 'Chloe', 'Question': ['How do you know if cheese has gone bad?'], 'link':'forumAnswers1.html', 'keyword': ['cheese', 'bad', 'cheeses']},
+    {'name': 'Chris', 'Question': ['Can you substitute baking soda for baking powder?'], 'link':'forumAnswers1.html', 'keyword': ['substitute', 'baking', 'baking soda', 'baking powder']},
+    {'name': 'Kim', 'Question': ['How much water do I need to cook rice?'], 'link':'forumAnswers1.html', 'keyword': ['rice', 'water', 'cook', 'much']},
+    {'name': 'Kim', 'Question': ['How do I know if an egg has gone bad?'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'bad', 'eggs']},
 
 ]
 
 var forumDataTEMP = forumData;
 
-
-/* function filterQuestion() {
-    var str = "input";
-    var n = str.search("curData["Question"][x]");
-    if ( n >= 0) {
-    document.getElementById("demo").innerHTML = str;
-    }
-    else document.getElementById("demo").innerHTML = "We're sorry, but we can't find what you're looking for. There is no data for this question. Or, you may have mispelled something wrong. Please try again! Thank you!";
-} */
-
-// for (var i = 0; i < forumData.length; i++) {
-//     var curData = complexData[i];
-//     var curHtml = template(curData);
-//     parentDiv.append(curHtml);
-//   }
 $(document).ready(function() {
     console.log('hello world');
-
-/* for (var i = 0; i < forumData.length; i++) {
-    var curData = forumData[i];
-    for(var x = 0; x<curData["Question"].length; x++){
-        if(curData["Question"][x] == input){
-        var curHtml = template(curData);
-    parentDiv.append(curHtml);
-    }
-  }
-} */
 
 input = localStorage.getItem("input").toLowerCase();
 // localStorage.setItem("input", input.split(' '));
 input = localStorage.getItem("input").split(' ');
 // var wordArray=input.split(' ');
 
-
-//console.log(input);
-// console.log(wordArray);
-
-// var wordArray = [];
-// var words = input;
-// for ( //1 ) {
-// wordArray.push( //2 );
-// }
-
-// console.log(Array.from(input));
-
-// console.log(input);
-// console.log(input.length);
-
-// var res = input.split(" ");
-// document.getElementById("forumResults").innerHTML = res;
-
-
-
 var source   = $("#forumResultsTemplate").html();
 var template = Handlebars.compile(source);
-
 var parentDiv = $("#forumResults");
-
 var count = 0;
-
-/* for (var i = 0; i < forumData.length; i++) { //goes through all data
-    var curData = forumData[i];
-    if(curData["keyword"] == input ){ //
-      console.log(curData["name"]);
-      var curHtml = template(curData);
-        parentDiv.append(curHtml);
-        count = count + 1;
-    }
-    localStorage.setItem("count", count);
-    count = localStorage.getItem("count");
-    if (count == 0) {
-            return parentDiv.append("Sorry, please try again!");
-        }
-    } */
 
 
 /* new CODE */
@@ -133,22 +81,5 @@ for (var i = 0; i < forumDataTEMP.length; i++) { //goes through all data
         }
     }
 }
-
-
-/*
-    if (curData["keyword"] == input ){ //
-      console.log(curData["name"]);
-      var forumHtml = template(forumData);
-        parentDiv.append(forumHtml);
-        count = count + 1;
-    }
-
-
-    localStorage.setItem("count", count);
-    count = localStorage.getItem("count");
-    if (count == 0) {
-            return parentDiv.append("Sorry, please try again!");
-        }
-    } */
 
 })
