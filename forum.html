@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Forum</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/introHCI.css" rel="stylesheet" />
+</head>
+
+<header>
+		<div class="nav">
+				<div class="navigation">
+					<a class=left href="index.html">Home</a>
+					<container id="searchNav">
+							Find <input type="text" placeholder="Ingredients, recipes, tools...">
+							Near <input type="text" placeholder="Current location">
+							<a href="mapsPage.html"><button>Search</button></a>
+					</container>
+					<a class=right href="profile.html">Profile</a>
+					<a class=right href="forum.html">Forum</a>
+				</div>
+			</div>
+</header>
+
+<body>
+	<img src="churros.jpg" style='position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:-1;'>
+
+	<div>
+		<h2>Forum</h2>
+
+		<div class="searchbar">
+				<form name="myform2" id="myform2" method="get">
+			<input id="myQuestion" type="search" placeholder="Ask a question..."></input>
+			<a href="forumSearchResults.html" data-role="button" id="submit" onclick="processSearch2();" value="Search">Search</a>
+		</div>
+			<!-- <p id="demo"></p>
+	<button onclick="myFunction()">Search</button>
+	<script>
+	function search()
+	{
+	var searchInput = document.getElementById('search').text();
+	var url = "forum" + searchInput + "2";
+	window.open(https://janethe7.github.io/HCIproject/forumAnswers1.html);
+	}
+	</script> -->
+
+			<!-- <a href="forumAnswers1.html"><button>Search</button></a> -->
+
+	</div>	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/introHCI.js"></script>
+	<script src="js/handlebars-v4.0.11.js"></script>
+	<script src="js/forumSearch.js"></script>
+
+
+
+</body>
+</html>
