@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Forum Answer 3</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/introHCI.css" rel="stylesheet" />
+</head>
+
+<header>
+    <div class="nav">
+		<div class="navigation">
+			<a class=left href="index.html">Home</a>
+			<container id="searchNav">
+					Find <input type="text" placeholder="Ingredients, recipes, tools...">
+					Near <input type="text" placeholder="Current location">
+					<a href="mapsPage.html"><button>Search</button></a>
+			</container>
+			<a class=right href="profile.html">Profile</a>
+			<a class=right href="forum.html">Forum</a>
+		</div>
+	</div>
+</header>
+
+<body>
+        <div class="searchbar" style="margin-top: 20px; margin-left: 75px;">
+            <!-- margin 450 for center-ish position -->
+				<form name="myform2" id="myform2" method="get">
+			<input id="myQuestion" type="search" placeholder="Ask another question..."></input>
+			<a href="forumSearchResults.html" data-role="button" id="submit" onclick="processSearch();" value="Search">Search</a>
+		</div>
+
+        <h3 style="margin-left: 75px">
+                "How do I use a crock pot?"
+            </h3>
+
+    <div class="containerForumAnswers">
+        <div class="leftColForum">
+            <div>
+                <h4 style="margin-left: 75px;">
+                    Results for your question:
+                </h4>
+            </div>
+            <div class="commentForum">
+                <img src="profilePicIcon.png" height="40px" width="40px" id="profilePic">
+                    <h3>Jess K.</h3>
+                <p style="padding: 0px">I love using crock pots. So glad you invested in one. You can 
+                in so many things. My favorite is this recipe: <a href="https://life-in-the-lofthouse.com/crock-pot-beef-stew/">https://life-in-the-lofthouse.com/crock-pot-beef-stew/</a>
+                It's just so yummy for dinner and great heated up for work the next day!</p>
+
+                <h4 style="padding: 0px; margin-left: 15px">Mac M.</h4>
+                <p style="padding: 0px; margin-left: 15px">This looks so good, I need to give this a try.</p>
+
+                <h4 style="padding: 0px; margin-left: 15px">Ryan R.</h4>
+                <p style="padding: 0px; margin-left: 15px">Add some basil leaves, for some reason it just brings
+                the whole dish togther.</p>
+
+                <h4 style="padding: 0px; margin-left: 15px">Joe W.</h4>
+                <p style="padding: 0px; margin-left: 15px">I love making using leftovers and just tossing it in the pot. 
+                Thanksgiving is coming up soon. All that turkey and gravy and veggies will be so good!</p>
+                       
+                <p id="demo"></p>
+                    <script>
+                            function myFunction() {
+                                var x = document.getElementById("myText").value;                                
+                                document.getElementById("demo").innerHTML = x;
+                            }
+                            </script>
+                
+                <input type="text" id="myText" placeholder="Type your comment here...">
+                <button onclick="myFunction()">Comment</button>
+
+                <p id="demo2"></p>
+                <script>
+                        function myFunction2() {
+                            var y = document.getElementById("myText2").value;                                
+                            document.getElementById("demo2").innerHTML = y;
+                        }
+                        </script>
+            
+            <input type="text" id="myText2" placeholder="Type your comment here...">
+            <button onclick="myFunction2()">Comment</button>
+
+            </div>
+        </div>
+
+        <div class="rightColForum">
+            <h4>Frequently asked questions</h4>
+            </h3>
+            <p class="forumLinks"><a href="forumAnswers2.html">What are some good egg free cookie recipes?</a>
+                <br><a href="forumAnswers1.html">How to make egg whites fluffy without a hand-mixer?</a></p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/handlebars-v4.0.11.js"></script>
+    <script src="js/search.js"></script>  
+    
+</body>
+</html>
