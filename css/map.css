@@ -1,0 +1,14 @@
+
+#map {
+	float: right;
+	height: 500px;
+	padding-right: 200px;
+}
+
+p {
+	padding-left: 20px;
+}
+
+#messageIcon {
+	padding-left: 20px;
+}
