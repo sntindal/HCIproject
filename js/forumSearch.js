@@ -1,4 +1,4 @@
-function processSearch(){
+function processSearch2(){
     var input = $("#myQuestion").val();
 
     localStorage.setItem("input", input);
@@ -14,9 +14,9 @@ function retrieveSearchInfo(){
 }
 
 var forumData = [
-    {'name': 'Steve', 'Question': ['How to make egg whites fluffy without a hand-mixer?'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'eggs', 'whites', 'hand-mixer']},
+    {'name': 'Steve', 'Question': ['How to make egg whites fluffy without a hand-mixer?'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'eggs', 'whites', 'hand-mixer', 'hand', 'mixer']},
     {'name': 'Jack', 'Question': ['What kind of pan should I use to sear steak?'], 'link':'forumAnswers1.html', 'keyword': ['pan', 'sear', 'steak']},
-    {'name': 'Amy', 'Question': ['How do I use a crock pot?'], 'link':'forumAnswers1.html', 'keyword': ['crock pot']},
+    {'name': 'Amy', 'Question': ['How do I use a crock pot?'], 'link':'forumAnswers1.html', 'keyword': ['crock', 'pot', 'crock pot']},
     {'name': 'Johnny', 'Question': ['Is it safe to cook chicken in a slow cooker?'], 'link':'forumAnswers1.html', 'keyword': ['safe', 'chicken', 'slow cooker']},
     {'name': 'Gabby', 'Question': ['What are the must have knives?'], 'link':'forumAnswers1.html', 'keyword': ['knives', 'knife', 'must']},
     {'name': 'Joe', 'Question': ['What are some good egg free recipes?'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'free','recipes', 'recipe']},
@@ -26,7 +26,7 @@ var forumData = [
     {'name': 'Tom', 'Question': ['Tips for doubling a recipe?'], 'link':'forumAnswers1.html', 'keyword': ['tips', 'doubling', 'double', 'recipe']},
     {'name': 'Bob', 'Question': ['What are some good substitutes for vanilla extract?'], 'link':'forumAnswers1.html', 'keyword': ['vanilla', 'extract', 'substitute','substitutes']},
     {'name': 'Chloe', 'Question': ['How do you know if cheese has gone bad?'], 'link':'forumAnswers1.html', 'keyword': ['cheese', 'bad', 'cheeses']},
-    {'name': 'Chris', 'Question': ['Can you substitute baking soda for baking powder?'], 'link':'forumAnswers1.html', 'keyword': ['substitute', 'baking', 'baking soda', 'baking powder']},
+    {'name': 'Chris', 'Question': ['Can you substitute baking soda for baking powder?'], 'link':'forumAnswers1.html', 'keyword': ['substitute', 'baking', 'baking soda', 'powder', 'baking powder']},
     {'name': 'Kim', 'Question': ['How much water do I need to cook rice?'], 'link':'forumAnswers1.html', 'keyword': ['rice', 'water', 'cook', 'much']},
     {'name': 'Kim', 'Question': ['How do I know if an egg has gone bad?'], 'link':'forumAnswers1.html', 'keyword': ['egg', 'bad', 'eggs']},
 

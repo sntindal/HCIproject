@@ -24,26 +24,25 @@
 </header>
 
 <body>
-    <div class="searchbar" style="margin-top: 30px; margin-bottom: 30px">
-            <p>
-                Have another question?
-            </p>
-			<input type="text" placeholder="Type your question here...">
-			<button type="submit"><i class="fa fa-search">Search</i></button>
-        </div>
+        <div class="searchbar" style="margin-top: 20px; margin-left: 75px;">
+            <!-- margin 450 for center-ish position -->
+				<form name="myform2" id="myform2" method="get">
+			<input id="myQuestion" type="search" placeholder="Ask another question..."></input>
+			<a href="forumSearchResults.html" data-role="button" id="submit" onclick="processSearch();" value="Search">Search</a>
+		</div>
 
-        <h3 style="margin-left: 35px">
+        <h3 style="margin-left: 75px">
                 "How do I use a crock pot?"
             </h3>
 
-    <div class="container2">
-        <div class="leftCol">
+    <div class="containerForumAnswers">
+        <div class="leftColForum">
             <div>
-                <h4>
+                <h4 style="margin-left: 75px;">
                     Results for your question:
                 </h4>
             </div>
-            <div class="comment">
+            <div class="commentForum">
                 <img src="profilePicIcon.png" height="40px" width="40px" id="profilePic">
                     <h3>Jess K.</h3>
                 <p style="padding: 0px">I love using crock pots. So glad you invested in one. You can 
@@ -60,96 +59,37 @@
                 <h4 style="padding: 0px; margin-left: 15px">Joe W.</h4>
                 <p style="padding: 0px; margin-left: 15px">I love making using leftovers and just tossing it in the pot. 
                 Thanksgiving is coming up soon. All that turkey and gravy and veggies will be so good!</p>
-                    
-                    <p id="demo"></p>
-                    <script>
-                            function myFunction() {
-                                var x = document.getElementById("myText").value;
-                                document.getElementById("demo").innerHTML = x;
-                            }
-                            </script>
-                
-                <input type="text" id="myText" placeholder="Type your comment here...">
-                
-                
-                <button onclick="myFunction()">Comment</button>
-            </div>
-            
-            <!-- <div class="comment">
-                <img src="profilePicIcon.png" height="40px" width="40px" id="profilePic">
-                    <h3>Jennifer D.</h3>
-                <p style="padding: 0px">I also make porridge using crock pots. The ratio is 1 cup of rice to 10 
-                cups of water. You can add any choice of meet, my favorite being beef. Cook for 30 minutes. 
-                And it's just a lovely dish for cold days or when you are sick. This is a go to for my Vietnamese family!</p>
-                
-                <h4 style="padding: 0px; margin-left: 15px">Linh T.</h4>
-                <p style="padding: 0px; margin-left: 15px">The longer you leave it on, the bigger the rice grain gets. 
-                I love my soup to be thick, so I leave it cooking for longer.</p>
-                    
+                       
                 <p id="demo"></p>
                     <script>
                             function myFunction() {
-                                var x = document.getElementById("myText").value;
+                                var x = document.getElementById("myText").value;                                
                                 document.getElementById("demo").innerHTML = x;
                             }
                             </script>
                 
                 <input type="text" id="myText" placeholder="Type your comment here...">
-                
-                
                 <button onclick="myFunction()">Comment</button>
-            </div>
 
-            <div class="comment">
-                <img src="profilePicIcon.png" height="40px" width="40px" id="profilePic">
-                    <h3>JoJo W.</h3>
-                <p style="padding: 0px">Make this ravioli: <a href="https://www.geniuskitchen.com/recipe/crock-pot-ravioli-64138?ftab=tweaks">https://www.geniuskitchen.com/recipe/crock-pot-ravioli-64138?ftab=tweaks</a>
-                . Super yummy!</p>
-                    
-                    <p id="demo"></p>
-                    <script>
-                            function myFunction() {
-                                var x = document.getElementById("myText").value;
-                                document.getElementById("demo").innerHTML = x;
-                            }
-                            </script>
-                
-                <input type="text" id="myText" placeholder="Type your comment here...">
-                
-                
-                <button onclick="myFunction()">Comment</button>
-            </div>
-
-            <div class="comment">
-                <img src="profilePicIcon.png" height="40px" width="40px" id="profilePic">
-                    <h3>Jasmine F.</h3>
-                <p style="padding: 0px">You can pretty much throw anything in your crockpot. Leftovers are 
-                the key for these meals. Add some spices and it tastes great.</p>
-
-                <h4 style="padding: 0px; margin-left: 15px">Eric P.</h4>
-                <p style="padding: 0px; margin-left: 15px">Yes exactly. With Thanksgiving right around the corner, 
-                experiement with the leftovers. Turkey with some veggies and gravy is the way to go!</p>
-
-                <p id="demo"></p>
+                <p id="demo2"></p>
                 <script>
-                        function myFunction() {
-                            var x = document.getElementById("myText").value;
-                            document.getElementById("demo").innerHTML = x;
+                        function myFunction2() {
+                            var y = document.getElementById("myText2").value;                                
+                            document.getElementById("demo2").innerHTML = y;
                         }
                         </script>
             
-            <input type="text" id="myText" placeholder="Type your comment here...">
-            
-            
-            <button onclick="myFunction()">Comment</button>
-            </div> -->
+            <input type="text" id="myText2" placeholder="Type your comment here...">
+            <button onclick="myFunction2()">Comment</button>
+
+            </div>
         </div>
 
-        <div class="rightCol">
+        <div class="rightColForum">
             <h4>Frequently asked questions</h4>
             </h3>
-            <p><a href="forumAnswers2.html">What are some good egg free cookie recipes?</a>
-                <br><a href="forumAnswers1.html">How to make egg whites fluffy without a hand-mixer?</a>></p>
+            <p class="forumLinks"><a href="forumAnswers2.html">What are some good egg free cookie recipes?</a>
+                <br><a href="forumAnswers1.html">How to make egg whites fluffy without a hand-mixer?</a></p>
         </div>
     </div>
 
